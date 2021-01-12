@@ -13,7 +13,7 @@
 		base-package="com.accolite.security.controller" />
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler />
- 	<bean id="templateResolver"
+	<bean id="templateResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
