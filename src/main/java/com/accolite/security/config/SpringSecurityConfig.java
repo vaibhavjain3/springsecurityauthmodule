@@ -15,16 +15,17 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 			.antMatchers("/**").hasAnyRole("ADMIN","USER")
 			.and()
-		      .formLogin()  
-		      .loginPage("/login")
-		      .defaultSuccessUrl("/",true)
-		      .permitAll()
-		     .and()
-		     	.logout()
+				.formLogin()
+				.loginPage("/login")
+				.defaultSuccessUrl("/",true)
+				.permitAll()
+			.and()
+				.logout()
 				.invalidateHttpSession(true)
-		     	.logoutUrl("/logout")
-		     	.logoutSuccessUrl("/login?logout")
-		     	.permitAll();
+				.deleteCookies("JSESSIONID")
+				.logoutUrl("/logout")
+				.logoutSuccessUrl("/login?logout")
+				.permitAll();
 	}
 
 	@Override

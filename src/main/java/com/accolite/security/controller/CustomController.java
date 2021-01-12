@@ -15,9 +15,4 @@ public class CustomController {
 	public String login() {
 		return "login";
 	}
-	
-	@RequestMapping(value = "/confirmLogout")
-	public String logout() {
-		return "logout";
-	}
 }
