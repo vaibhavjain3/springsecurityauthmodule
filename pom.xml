@@ -12,6 +12,7 @@
 		<spring.version>3.2.6.RELEASE</spring.version>
 		<spring.security.version>3.2.3.RELEASE</spring.security.version>
 		<jstl.version>1.2</jstl.version>
+		<java.servlet.version>3.1.0</java.servlet.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -42,7 +43,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
+			<version>${java.servlet.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

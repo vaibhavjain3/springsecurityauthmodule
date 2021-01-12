@@ -13,7 +13,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-			.csrf().disable()
 			.authorizeRequests()
 			.antMatchers("/**").hasAnyRole("ADMIN","USER")
 			.and()
@@ -23,6 +22,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		      .permitAll()
 		     .and()
 		     	.logout()
+				.invalidateHttpSession(true)
+		     	.logoutUrl("/logout")
 		     	.logoutSuccessUrl("/login?logout")
 		     	.permitAll();
 	}
