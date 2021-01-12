@@ -1,1 +1,0 @@
-<h1>Welcome to Spring Security Auth Module</h1>
