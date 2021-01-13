@@ -32,8 +32,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 	}
 	
 	/*
-	 * Update the below function to change the Password Encryption Scheme Replace
-	 * `getPasswordEncoder().encode("pass")` with `"{noop}pass"` to use No Password Encryption Scheme
+	 * Update the below function to change the Password Encryption Scheme 
+	 * Replace `getPasswordEncoder().encode("pass")` with `"{noop}pass"` to use No Password Encryption Scheme
 	 */
 	@Bean
 	public PasswordEncoder getPasswordEncoder() {
