@@ -8,32 +8,32 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
-public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-			.authorizeRequests()
-			.antMatchers("/**").hasAnyRole("ADMIN","USER")
-			.and()
-				.formLogin()
-				.loginPage("/login")
-				.defaultSuccessUrl("/",true)
-				.permitAll()
-			.and()
-				.logout()
-				.invalidateHttpSession(true)
-				.deleteCookies("JSESSIONID")
-				.logoutUrl("/logout")
-				.logoutSuccessUrl("/login?logout")
-				.permitAll();
+		.authorizeRequests()
+		.antMatchers("/**").hasAnyRole("ADMIN","USER")
+		.and()
+			.formLogin()
+			.loginPage("/login")
+			.defaultSuccessUrl("/",true)
+			.permitAll()
+		.and()
+			.logout()
+			.invalidateHttpSession(true)
+			.deleteCookies("JSESSIONID")
+			.logoutUrl("/logout")
+			.logoutSuccessUrl("/login?logout")
+			.permitAll();
 	}
-
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		// In-Memory Authentication
-		auth.inMemoryAuthentication()
-			.withUser("user").password("{noop}pass").roles("USER")
-			.and()
-			.withUser("admin").password("{noop}pass").roles("ADMIN");
+				auth.inMemoryAuthentication()
+					.withUser("user").password("{noop}pass").roles("USER")
+					.and()
+					.withUser("admin").password("{noop}pass").roles("ADMIN");
 	}
 }
