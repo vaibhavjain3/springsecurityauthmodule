@@ -10,12 +10,12 @@ public class CustomController {
 	public String index() {
 		return "index";
 	}
-	
+
 	@RequestMapping(value = "/login")
 	public String login() {
 		return "login";
 	}
-	
+
 	@RequestMapping(value = "/logout")
 	public String logout() {
 		return "logout";

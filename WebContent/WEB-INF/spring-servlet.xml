@@ -14,7 +14,6 @@
 	<mvc:annotation-driven />
 	<mvc:resources location="/WEB-INF/website/" mapping="/**" />
 	<mvc:default-servlet-handler />
-
 	<bean id="templateResolver"
 		class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
 		<property name="prefix" value="/WEB-INF/website/" />
@@ -24,7 +23,6 @@
 	<bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
 		<property name="templateEngine" ref="templateEngine" />
 	</bean>
-
 	<bean id="templateEngine"
 		class="org.thymeleaf.spring5.SpringTemplateEngine">
 		<property name="templateResolver" ref="templateResolver" />

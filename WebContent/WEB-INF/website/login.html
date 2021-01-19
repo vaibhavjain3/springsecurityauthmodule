@@ -3,21 +3,21 @@
 <title>Login</title>
 </head>
 <body>
-	<div >
-   <form name="f" th:action="@{/login}" method="post">
-    <fieldset>
-     <h2 class="form-signin-heading">Sign In</h2>
-     <p>
-      <label for="username">UserName</label>
-      <input type="text" id="username" name="username" placeholder="Username">
-     </p>
-     <p>
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Password">
-     </p>
-     <button type="submit">Sign in</button>
-    </fieldset>  
-   </form>
-  </div>
+	<div>
+		<form name="f" th:action="@{/login}" method="post">
+			<fieldset>
+				<h2 class="form-signin-heading">Sign In</h2>
+				<p>
+					<label for="username">UserName</label> 
+					<input type="text" id="username" name="username" placeholder="Username">
+				</p>
+				<p>
+					<label for="password">Password</label> 
+					<input type="password" id="password" name="password" placeholder="Password">
+				</p>
+				<button type="submit">Sign in</button>
+			</fieldset>
+		</form>
+	</div>
 </body>
 </html>
