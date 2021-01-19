@@ -16,7 +16,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-		.antMatchers("/**").hasAnyRole("ADMIN","USER")
+		.antMatchers("/admin/**").hasRole("ADMIN")
+		.antMatchers("/user/**").hasAnyRole("ADMIN","USER")
+		.antMatchers("/index.html","/").authenticated()
+		.antMatchers("/**").permitAll()
 		.and()
 			.formLogin()
 			.loginPage("/login")
@@ -27,7 +30,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 			.invalidateHttpSession(true)
 			.deleteCookies("JSESSIONID")
 			.logoutUrl("/logout")
-			.logoutSuccessUrl("/login?logout")
+			.logoutSuccessUrl("/login")
 			.permitAll();
 	}
 	

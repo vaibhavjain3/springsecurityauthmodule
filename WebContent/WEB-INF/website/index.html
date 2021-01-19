@@ -1,0 +1,11 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Welcome Page</title>
+</head>
+<body>
+	<h1>Welcome to Spring Security Auth Module</h1>
+	<form onsubmit="return confirm('Are you sure you want to logout?')" method="post" th:action="@{/logout}">
+		<button type="submit">Sign out</button>
+	</form>
+</body>
+</html>
