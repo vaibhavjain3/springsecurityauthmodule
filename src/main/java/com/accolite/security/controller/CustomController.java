@@ -1,13 +1,22 @@
 package com.accolite.security.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping
+@RequestMapping("")
 public class CustomController {
-	@RequestMapping(value = "/")
-	public String index() {
+	@RequestMapping(value = {"/","/index*"})
+	public String index(Model model) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String username = ((UserDetails) auth.getPrincipal()).getUsername();
+		model.addAttribute("roles", "Your Roles are " + auth.getAuthorities());
+		model.addAttribute("username", "Hello " + username);
 		return "index";
 	}
 
