@@ -15,7 +15,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-		.csrf().disable()
 		.authorizeRequests()
 		.antMatchers("/admin/**").hasRole("ADMIN")
 		.antMatchers("/user/**").hasAnyRole("ADMIN","USER")
@@ -23,15 +22,15 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers("/**").permitAll()
 		.and()
 			.formLogin()
-			.loginPage("/login.html")
-			.defaultSuccessUrl("/index.html",true)
+			.loginPage("/login")
+			.defaultSuccessUrl("/",true)
 			.permitAll()
 		.and()
 			.logout()
 			.invalidateHttpSession(true)
 			.deleteCookies("JSESSIONID")
-			.logoutUrl("/logout.html")
-			.logoutSuccessUrl("/login.html")
+			.logoutUrl("/logout")
+			.logoutSuccessUrl("/login")
 			.permitAll();
 	}
 	
