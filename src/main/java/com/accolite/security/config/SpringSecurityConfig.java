@@ -30,7 +30,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 			.invalidateHttpSession(true)
 			.deleteCookies("JSESSIONID")
 			.logoutUrl("/logout")
-			.logoutSuccessUrl("/login")
+			.logoutSuccessUrl("/login?logout")
 			.permitAll();
 	}
 	
