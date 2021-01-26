@@ -12,11 +12,11 @@
 	<context:component-scan
 		base-package="com.accolite.security.controller" />
 	<mvc:annotation-driven />
-	<mvc:resources location="/WEB-INF/website/" mapping="/**" />
+	<mvc:resources location="/website/" mapping="/**" />
 	<mvc:default-servlet-handler />
 	<bean id="templateResolver"
 		class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
-		<property name="prefix" value="/WEB-INF/website/" />
+		<property name="prefix" value="/website/" />
 		<property name="suffix" value=".html" />
 		<property name="templateMode" value="HTML" />
 	</bean>
